@@ -1,0 +1,12 @@
+FROM node:alpine
+
+WORKDIR /react-docker-app
+
+COPY ./package.json /react-docker-app
+
+RUN npm install -f
+
+COPY . /react-docker-app
+
+CMD ["/bin/sh", "-c", "npm start"]
+
